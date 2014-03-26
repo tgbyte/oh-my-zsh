@@ -95,10 +95,12 @@ prompt_git() {
 }
 
 prompt_ruby() {
-  local gemset
-  gemset=`~/.rvm/bin/rvm-prompt g`
-  if [[ -n $gemset ]]; then
-    prompt_segment cyan black "⬙ $(~/.rvm/bin/rvm-prompt v)$(~/.rvm/bin/rvm-prompt g)"
+  if [[ -f ~/.rvm/bin/rvm-prompt ]]; then
+    local gemset
+    gemset=`~/.rvm/bin/rvm-prompt g`
+    if [[ -n $gemset ]]; then
+      prompt_segment cyan black "⬙ $(~/.rvm/bin/rvm-prompt v)$(~/.rvm/bin/rvm-prompt g)"
+    fi
   fi
 }
 
