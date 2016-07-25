@@ -109,7 +109,7 @@ prompt_dir() {
   dir=$(print -P %3~)
   prefix="${dir%/*}"
   if [[ $prefix == $dir || $prefix == '' ]]; then
-    prompt_segment blue black "%B%~%b%K{blue}"
+    prompt_segment blue black "%B%1~%b%K{blue}"
   else
     prompt_segment blue black "${prefix}/%B%1~%b%K{blue}"
   fi
