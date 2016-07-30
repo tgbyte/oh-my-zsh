@@ -45,6 +45,10 @@ function _plugin__start_agent()
   zstyle -a :omz:plugins:ssh-agent identities identities
   echo starting ssh-agent...
 
+  if [[ -e "/usr/bin/ksshaskpass" ]]; then
+    export SSH_ASKPASS="/usr/bin/ksshaskpass"
+  fi
+
   /usr/bin/ssh-add $HOME/.ssh/${^identities} < /dev/null
 }
 
