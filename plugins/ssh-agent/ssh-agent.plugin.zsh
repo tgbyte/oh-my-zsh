@@ -49,7 +49,7 @@ function _plugin__start_agent()
     export SSH_ASKPASS="/usr/bin/ksshaskpass"
   fi
 
-  /usr/bin/ssh-add $HOME/.ssh/${^identities} < /dev/null
+  /usr/bin/ssh-add $HOME/.ssh/${^identities} < /dev/null > /dev/null 2>&1
 }
 
 # Get the filename to store/lookup the environment from
